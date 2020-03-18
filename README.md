@@ -8,8 +8,8 @@
 - Create a class based component called `Login` and reference it in `AppContainer`
 
 ## Forms
-- The `SignUp` component should display a form using controlled components with fields for full name, username, email address and password. When the form is submitted save the response and clear the fields.
-- The `Login` component should display a form using controlled components with fields for username, and password. When the form is submitted save the response and clear the fields.
+- The `SignUp` component should display a form using controlled components with fields for full name, username, email address and password. When the form is submitted print the response and clear the fields.
+- The `Login` component should display a form using controlled components with fields for username, and password. When the form is submitted print the response and clear the fields.
 
 ## State
 - Add a `Login` button and a `Sign Up` button to the `AppContainer` component
