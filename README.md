@@ -8,8 +8,8 @@
 - Create a class based component called `Login` and reference it in `AppContainer`
 
 ## Forms
-- The `SignUp` component should display a form using controlled components with fields for full name, username, email address and password. When the form is submitted print the response and clear the fields.
-- The `Login` component should display a form using controlled components with fields for username, and password. When the form is submitted print the response and clear the fields.
+- The `SignUp` component should display a form using controlled components with fields for full name, username, email address and password. When the form is submitted print the response.
+- The `Login` component should display a form using controlled components with fields for username, and password. When the form is submitted print the response.
 
 ## State
 - Add a `Login` button and a `Sign Up` button to the `AppContainer` component
@@ -26,6 +26,10 @@
 
 ## Conditional Rendering HTML
 - Define a property of state called `hasBeenSubmitted` in the `SignUp` component
-- When the form has been submitted in the `SignUp` component display an h1 tag with the text `You've Signed Up` above the form using the `hasBeenSubmitted` property of state
+- When the form has been submitted in the `SignUp` component display an h1 tag with the text `You've Signed Up` and an h2 tag with the text `Your Username is [USERNAME FROM FORM]` above the form using the `hasBeenSubmitted` property of state
 - Define a property of state called `hasBeenSubmitted` in the `Login` component
-- When the form has been submitted in the `Login` component display an h1 tag with the text `You've Logged In` above the form using the `hasBeenSubmitted` property of state
+- When the form has been submitted in the `Login` component display an h1 tag with the text `You've Logged In` and an h2 tag with the text `Welcome back [USERNAME FROM FORM]` above the form using the `hasBeenSubmitted` property of state
+
+## Extra!
+- In the `SignUp` and `Login` components add a button that says `resubmit form` to display after the form has been submitted
+- When the `resubmit form` button is clicked display the form again and clear the fields
