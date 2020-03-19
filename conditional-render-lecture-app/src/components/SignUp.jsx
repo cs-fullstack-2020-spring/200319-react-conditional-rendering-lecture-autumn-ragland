@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class SignUp extends Component {
     constructor(props) {
         super(props);
+        // setting initial state to be updated by form input
         this.state = {
             fullName: "",
             userName: "",
@@ -11,6 +12,7 @@ class SignUp extends Component {
         }
     }
 
+    // conditional event handler - tied to onChange event listener to update state
     handleChange = (event) => {
         let fieldName = event.target.name;
         let fieldValue = event.target.value;
@@ -25,12 +27,14 @@ class SignUp extends Component {
         }
     }
 
+    // event handler - tied to onClick event listener 
     handleSubmission = (event) => {
-        event.preventDefault();
+        event.preventDefault(); // keeps the page from reloading
+        console.log(this.state); // prints form values
     }
 
+    // displaying a sign up form using controlled components
     render() {
-        // full name, username, email address and password
         return (
             <div>
                 <form action="">
