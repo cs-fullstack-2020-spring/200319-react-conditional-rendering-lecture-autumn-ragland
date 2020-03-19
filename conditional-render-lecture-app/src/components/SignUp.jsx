@@ -9,6 +9,7 @@ class SignUp extends Component {
             userName: "",
             email: "",
             password: "",
+            hasBeenSubmitted: false,
         }
     }
 
@@ -31,10 +32,19 @@ class SignUp extends Component {
     handleSubmission = (event) => {
         event.preventDefault(); // keeps the page from reloading
         console.log(this.state); // prints form values
+        this.setState({ hasBeenSubmitted: true })
     }
 
     // displaying a sign up form using controlled components
     render() {
+        if (this.state.hasBeenSubmitted) {
+            return (
+                <div>
+                    <h1>You've Signed Up</h1>
+                    <h2>Your Username is : {this.state.userName}</h2>
+                </div>
+            )
+        }
         return (
             <div>
                 <form action="">
@@ -60,7 +70,7 @@ class SignUp extends Component {
                             <label htmlFor="password">Password : </label>
                             <input type="password" name="password" id="password" value={this.state.password} onChange={this.handleChange} />
                         </div>
-                        <button onClick = {this.handleSubmission}>Sign Up</button>
+                        <button onClick={this.handleSubmission}>Sign Up</button>
                     </fieldset>
                 </form>
             </div>

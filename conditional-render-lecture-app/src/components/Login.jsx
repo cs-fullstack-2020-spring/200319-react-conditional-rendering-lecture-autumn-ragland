@@ -7,6 +7,7 @@ class Login extends Component {
         this.state = {
             userName: "",
             password: "",
+            hasBeenSubmitted: false,
         }
     }
 
@@ -25,16 +26,24 @@ class Login extends Component {
     handleSubmission = (event) => {
         event.preventDefault(); // keeps the page from reloading
         console.log(this.state); // prints form values
+        this.setState({ hasBeenSubmitted: true })
     }
 
     // displaying a sign up form using controlled components
     render() {
+        if (this.state.hasBeenSubmitted) {
+            return (
+                <div>
+                    <h1>You've Logged In</h1>
+                    <h2>Welcome Back : {this.state.userName}</h2>
+                </div>
+            )
+        }
         return (
             <div>
                 <form action="">
                     <fieldset>
                         <legend>Log In!</legend>
-
 
                         <div className="formGroup">
                             <label htmlFor="userName">User Name : </label>
