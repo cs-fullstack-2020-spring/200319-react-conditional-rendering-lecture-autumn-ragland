@@ -9,14 +9,16 @@ class SignUp extends Component {
             userName: "",
             email: "",
             password: "",
-            hasBeenSubmitted: false,
+            hasBeenSubmitted: false, // flag for conditional render
         }
     }
 
     // conditional event handler - tied to onChange event listener to update state
     handleChange = (event) => {
+        // define variables to represent event.target properties
         let fieldName = event.target.name;
         let fieldValue = event.target.value;
+        // conditionally update state
         if (fieldName === "fullName") {
             this.setState({ [fieldName]: fieldValue })
         } else if (fieldName === "userName") {
@@ -32,11 +34,12 @@ class SignUp extends Component {
     handleSubmission = (event) => {
         event.preventDefault(); // keeps the page from reloading
         console.log(this.state); // prints form values
-        this.setState({ hasBeenSubmitted: true })
+        this.setState({ hasBeenSubmitted: true }) // update flag for conditional rendering
     }
 
-    // displaying a sign up form using controlled components
     render() {
+        // if the if statement evaluates to true 
+        // display a success message
         if (this.state.hasBeenSubmitted) {
             return (
                 <div>
@@ -45,6 +48,8 @@ class SignUp extends Component {
                 </div>
             )
         }
+        // if the if statement evaluates to false 
+        // display a sign up form using controlled components
         return (
             <div>
                 <form action="">

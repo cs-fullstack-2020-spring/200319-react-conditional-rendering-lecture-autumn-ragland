@@ -5,16 +5,18 @@ class Login extends Component {
         super(props);
         // setting initial state to be updated by form input
         this.state = {
-            userName: "",
-            password: "",
-            hasBeenSubmitted: false,
+            userName: "", // form field
+            password: "", // form field
+            hasBeenSubmitted: false, // flag for conditional render
         }
     }
 
     // conditional event handler - tied to onChange event listener to update state
     handleChange = (event) => {
+        // define variables to represent event.target properties
         let fieldName = event.target.name;
         let fieldValue = event.target.value;
+        // conditionally update state
         if (fieldName === "userName") {
             this.setState({ [fieldName]: fieldValue })
         } else if (fieldName === "password") {
@@ -26,11 +28,12 @@ class Login extends Component {
     handleSubmission = (event) => {
         event.preventDefault(); // keeps the page from reloading
         console.log(this.state); // prints form values
-        this.setState({ hasBeenSubmitted: true })
+        this.setState({ hasBeenSubmitted: true }) // update flag for conditional rendering
     }
 
-    // displaying a sign up form using controlled components
     render() {
+        // if the if statement evaluates to true 
+        // display a success message
         if (this.state.hasBeenSubmitted) {
             return (
                 <div>
@@ -39,6 +42,8 @@ class Login extends Component {
                 </div>
             )
         }
+        // if the if statement evaluates to false 
+        // display a sign up form using controlled components
         return (
             <div>
                 <form action="">
